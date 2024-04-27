@@ -1,0 +1,55 @@
+/* PingLatency.scss */
+
+// Define variables
+$primary-color: #ff5722;
+$secondary-color: #333;
+$tertiary-color: #666;
+$background-color: #f1f1f1;
+$needle-width: 4px;
+$needle-height: 100px;
+$needle-transition: 0.5s;
+
+.App {
+  text-align: center;
+  margin-top: 50px;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: $secondary-color;
+  }
+
+  p {
+    font-size: 24px;
+    color: $tertiary-color;
+    margin-bottom: 30px;
+  }
+}
+
+.speed-meter {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: $background-color;
+  position: relative;
+  margin: 0 auto;
+
+  .needle {
+    position: absolute;
+    width: $needle-width;
+    height: $needle-height;
+    background: $primary-color;
+    bottom: 50%;
+    left: calc(50% - (#{$needle-width} / 2));
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    transition: transform $needle-transition ease;
+  }
+
+  .speed-value {
+    font-size: 36px;
+    color: $primary-color;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+}
